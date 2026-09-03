@@ -40,11 +40,20 @@ everything else is preparation for them or cleanup after them.
 
 ## Tools
 
-Standard library only — no API key, no install.
+Standard library only — no API key, no install. Both live in this skill's own
+`scripts/` directory, so run them by the path this SKILL.md was loaded from:
 
 ```
-python3 ~/.claude/plugins/cache/29user/*/skills/seo-playbook/scripts/audit_site.py https://yourdomain.com
-python3 ~/.claude/plugins/cache/29user/*/skills/seo-playbook/scripts/preflight_page.py https://yourdomain.com/new-page/
+python3 <skill-dir>/scripts/audit_site.py https://yourdomain.com
+python3 <skill-dir>/scripts/preflight_page.py https://yourdomain.com/new-page/
+```
+
+When installed as a plugin, `<skill-dir>` sits under the marketplace and version,
+so resolve it rather than typing it — for example:
+
+```
+SKILL_DIR=$(ls -d ~/.claude/plugins/cache/*/29user/*/skills/seo-playbook | tail -1)
+python3 "$SKILL_DIR/scripts/audit_site.py" https://yourdomain.com
 ```
 
 **`audit_site.py`** crawls the site's own sitemap and checks hreflang groups,
