@@ -1,5 +1,6 @@
 {
-  "name": "29user",
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "29user-marketplace",
   "description": "29user's Claude Code plugins.",
   "owner": {
     "name": "29user",
@@ -13,10 +14,7 @@
         "name": "29user"
       },
       "category": "productivity",
-      "source": {
-        "source": "github",
-        "repo": "29user/29user-seo-playbook"
-      }
+      "source": "./"
     }
   ]
 }
