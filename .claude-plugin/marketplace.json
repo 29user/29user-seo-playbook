@@ -1,0 +1,22 @@
+{
+  "name": "29user",
+  "description": "29user's Claude Code plugins.",
+  "owner": {
+    "name": "29user",
+    "url": "https://github.com/29user"
+  },
+  "plugins": [
+    {
+      "name": "29user",
+      "description": "SEO playbook: a step-by-step method for sites with no authority yet, plus runnable site and page audits that need no API key.",
+      "author": {
+        "name": "29user"
+      },
+      "category": "productivity",
+      "source": {
+        "source": "github",
+        "repo": "29user/29user-seo-playbook"
+      }
+    }
+  ]
+}

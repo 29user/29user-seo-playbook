@@ -1,0 +1,24 @@
+{# Language alternates. Three rules, each one paid for in production:
+
+   1. An empty block means there is no translation. Then the alternate is NOT
+      printed at all. It used to print a link to the other language's home page
+      instead — the home page never linked back, so every group on the site read
+      as broken.
+   2. x-default is the default-language version of THIS page, not the site home.
+   3. The language switcher still needs a destination, so it gets its own
+      fallback to the home page. Not to be confused with hreflang.
+#}
+{% set alt_ru %}{% block hreflang_ru %}/ru/{% endblock %}{% endset %}
+{% set alt_en %}{% block hreflang_en %}/en/{% endblock %}{% endset %}
+{% set canonical_path %}{% block canonical_path %}/{{ lang }}/{% endblock %}{% endset %}
+
+{% set alt_ru = alt_ru | trim %}
+{% set alt_en = alt_en | trim %}
+{% set default_url = alt_en or canonical_path | trim %}
+{% set switch_ru = alt_ru or '/ru/' %}
+{% set switch_en = alt_en or '/en/' %}
+
+<link rel="canonical" href="https://{{ domain }}{{ canonical_path }}">
+{% if alt_ru %}<link rel="alternate" hreflang="ru" href="https://{{ domain }}{{ alt_ru }}">
+{% endif %}{% if alt_en %}<link rel="alternate" hreflang="en" href="https://{{ domain }}{{ alt_en }}">
+{% endif %}<link rel="alternate" hreflang="x-default" href="https://{{ domain }}{{ default_url }}">

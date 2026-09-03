@@ -1,0 +1,21 @@
+{
+  "name": "29user",
+  "version": "1.0.0",
+  "description": "Practical skills for shipping. Currently: an SEO playbook — a step-by-step method for sites with no authority yet, with runnable site and page audits.",
+  "author": {
+    "name": "29user",
+    "url": "https://github.com/29user"
+  },
+  "repository": "https://github.com/29user/29user-seo-playbook",
+  "license": "MIT",
+  "keywords": [
+    "seo",
+    "technical-seo",
+    "hreflang",
+    "programmatic-seo",
+    "site-audit"
+  ],
+  "skills": [
+    "./skills/seo-playbook"
+  ]
+}
